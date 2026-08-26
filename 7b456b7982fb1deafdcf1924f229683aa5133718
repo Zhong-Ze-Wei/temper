@@ -1,0 +1,36 @@
+方法/候选方法/references/assessment.md
+  c1f322e77ee1ae44 1-139
+方法/候选方法/openai.yaml
+  c1f322e77ee1ae44 1-4
+方法/候选方法/references/generation-traceability.md
+  c1f322e77ee1ae44 1-154
+循环/当前状态.md
+  c1f322e77ee1ae44 9-10,12-19,23-25,32,39,43-45,49
+方法/候选方法/references/project-structure.md
+  c1f322e77ee1ae44 1-131
+方法/候选方法/references/strategy-selection.md
+  c1f322e77ee1ae44 1-110
+.temper/state.json
+  c1f322e77ee1ae44 7,11-27,30,33-35,37,43,52,54-56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7b456b7982fb1deafdcf1924f229683aa5133718",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 585,
+      "total_deletions": 22,
+      "accepted_lines": 585,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/bfa3e99f2892308f4c7d3815c72eba6090f31308d02be34cd3322867cb564784"
+    }
+  }
+}

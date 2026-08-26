@@ -1,0 +1,26 @@
+{
+  "run_id": "0002-候选E1用户体验层重构",
+  "timestamp": "2026-08-26",
+  "stage": "formation",
+  "local_stage": "eval_building",
+  "intensity": "standard",
+  "comparison_status": "epoch1_frozen",
+  "epoch": 1,
+  "purpose": "对 E1 候选方法（SKILL.md 用户体验层重构 + 新增 interaction-contract.md）用愿景基线对照 v0 自评，产出入工可读 diff，交用户验收",
+  "change_relation": "contract_change",
+  "comparison": {
+    "baseline": "评测/愿景基线对照.md (v0)",
+    "current_working": "安装位置 /Users/zhong/.agents/skills/temper（hash f6fa3a1b…）",
+    "candidate": "方法/候选方法/",
+    "same_epoch": true
+  },
+  "evidence_level": "self_eval_vision_baseline_pending_human_accept",
+  "artifacts": {
+    "candidate_skill": "方法/候选方法/SKILL.md",
+    "candidate_interaction_contract": "方法/候选方法/references/interaction-contract.md",
+    "candidate_note": "方法/候选方法/说明.md"
+  },
+  "decisions_path": "运行记录/0002-候选E1用户体验层重构/决策.md",
+  "run_status": "pending_human_accept",
+  "notes": "候选未采纳，未发布，未改安装位置"
+}

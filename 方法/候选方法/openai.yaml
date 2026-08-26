@@ -1,0 +1,4 @@
+interface:
+  display_name: "淬炼"
+  short_description: "为不同 AI 任务选择合适的迭代、反馈、人工参与与追溯策略"
+  default_prompt: "使用 $temper 理解当前 AI 任务，并按反馈成本、风险和版本关系生成合适的最小迭代策略与结构。"

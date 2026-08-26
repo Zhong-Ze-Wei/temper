@@ -1,0 +1,26 @@
+versions/v0.0.3-candidate/SKILL.md
+  c1f322e77ee1ae44 20,51
+.temper/state.json
+  c1f322e77ee1ae44 49-50,52-54,56
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cb055e56532be9fcad489a9c2f611d3eb948650f",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 10,
+      "total_deletions": 10,
+      "accepted_lines": 754,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/a25079b5fffeb45ef5fe18c78695587847e2114bdb611c8295a2a659551b182e"
+    }
+  }
+}

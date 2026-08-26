@@ -27,18 +27,18 @@
   },
   "versions": {
     "working": "SKILL.md",
-    "candidate": "versions/v0.1.0-candidate",
+    "candidate": "versions/v0.0.3-candidate",
     "last_business_validated": null,
     "production": null,
     "active_experiments": [
-      "candidate-e1-ux-contract"
+      "candidate-e0.0.3-ux-contract"
     ]
   },
-  "current_step": "candidate-e1-ux-contract",
+  "current_step": "candidate-e0.0.3-ux-contract",
   "paths": {
     "working_skill": "SKILL.md",
     "version_hist": "VERSION.md",
-    "candidate": "versions/v0.1.0-candidate",
+    "candidate": "versions/v0.0.3-candidate",
     "version_snapshot_v001": "versions/v0.0.1",
     "eval": "评测/评测说明.md",
     "runs": "runs",
@@ -46,12 +46,13 @@
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "runs/0003-元层修正",
-  "next_action": "用户验收候选 v0.1.0（professional 版 SKILL.md + interaction-contract）",
+  "last_run": "runs/0005-codex评审与修正",
+  "next_action": "用户验收候选 v0.0.3（已按 codex 三类修正处理）",
   "human_attention": [
-    "验收候选 v0.1.0 是否符合'用户体验层对齐愿景'",
+    "验收候选 v0.0.3 是否符合'用户体验层对齐愿景'（已按 codex 修正三类问题）",
     "采纳：候选晋升为正式版（更新根 SKILL.md）与安装位置 ~/.agents/skills/temper（不自动）",
-    "版本号策略：0.1.0？如何对齐注册表 0.0.2？",
-    "是否走发布链（外发，需单独确认）"
+    "版本号策略：小步进 0.0.x；是否对齐注册表 0.0.2",
+    "是否走发布链（外发，需单独确认）",
+    "运行 A/B/C 测试任务验证 temper 真实行为（测试集在 评测/测试任务集.md）"
   ]
 }

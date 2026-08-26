@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>淬炼 temper · 开始使用</title>
+<meta name="description" content="你把任务交给淬炼，它带你一轮一轮搞清楚、搞稳定——你只在它真正需要你的地方介入。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%231b1512'/%3E%3Cpath d='M50 16 L78 50 L50 84 L22 50 Z' fill='none' stroke='%23ea580c' stroke-width='7'/%3E%3Ccircle cx='50' cy='50' r='9' fill='%23fbbf24'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --panel: #ffffff;
+    --ink: #29231e;
+    --ink-2: #5f564d;
+    --ink-3: #93897f;
+    --line: #e9e2d8;
+    --line-2: #ddd3c5;
+    --accent: #c2410c;
+    --accent-2: #ea580c;
+    --soft: #f4efe8;
+    --you-bg: #fdeadd;
+    --you-bd: #f0b285;
+    --you-ink: #7c2d12;
+    --ok: #3f6f4f;
+    --no: #a03d3d;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+  body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.85; font-size: 16px; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); }
+
+  /* ---------- Hero ---------- */
+  .hero { position: relative; overflow: hidden; padding: 84px 24px 66px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(640px 300px at 82% -6%, rgba(234,88,12,.13), transparent 65%),
+      radial-gradient(520px 280px at 4% 100%, rgba(180,83,9,.09), transparent 60%);
+  }
+  .hero-inner { max-width: 780px; margin: 0 auto; position: relative; }
+  .hero .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .2em; color: var(--accent); margin-bottom: 20px; }
+  .hero h1 { font-size: clamp(38px, 6vw, 58px); font-weight: 800; line-height: 1.2; letter-spacing: .01em; }
+  .hero h1 .en { font-family: var(--mono); font-weight: 500; font-size: .38em; color: var(--accent-2); letter-spacing: .3em; vertical-align: .5em; margin-left: 10px; }
+  .hero .promise {
+    font-size: clamp(19px, 2.6vw, 25px); font-weight: 600; line-height: 1.75;
+    margin-top: 26px; color: var(--ink);
+  }
+  .hero .promise em { font-style: normal; color: var(--accent); border-bottom: 3px solid #f6c89b; padding-bottom: 1px; }
+  .hero .sub { color: var(--ink-2); font-size: 16.5px; margin-top: 18px; max-width: 640px; }
+  .startline {
+    margin-top: 30px; display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  }
+  .startline .box {
+    font-family: var(--mono); font-size: 14.5px; color: #4a3527;
+    background: #fff; border: 1.5px dashed var(--line-2); border-radius: 12px;
+    padding: 12px 18px; cursor: pointer; transition: border-color .2s, background .2s;
+  }
+  .startline .box:hover { border-color: var(--accent-2); background: #fffaf5; }
+  .startline .box .lbl { display: block; font-family: var(--sans); font-size: 11.5px; color: var(--ink-3); letter-spacing: .1em; margin-bottom: 2px; }
+  .startline .box:active { transform: translateY(1px); }
+  .hero .ctas { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; text-decoration: none; font-size: 15px; font-weight: 650;
+    padding: 11px 26px; border-radius: 999px; transition: transform .15s, box-shadow .15s;
+  }
+  .btn.primary { background: linear-gradient(150deg, var(--accent-2), var(--accent)); color: #fff; box-shadow: 0 6px 18px rgba(234,88,12,.25); }
+  .btn.primary:hover { transform: translateY(-2px); }
+  .btn.ghost { border: 1.5px solid var(--line-2); color: var(--ink); background: #fff; }
+  .btn.ghost:hover { border-color: var(--accent-2); color: var(--accent); }
+  .hero .facts { margin-top: 34px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .fact {
+    font-size: 13px; color: var(--ink-2); background: #fff; border: 1px solid var(--line);
+    border-radius: 999px; padding: 6px 16px;
+  }
+  .fact b { color: var(--accent); font-weight: 700; }
+
+  /* ---------- Sections ---------- */
+  main { max-width: 820px; margin: 0 auto; padding: 20px 24px 60px; }
+  section { padding-top: 66px; }
+  .sec-kicker { font-family: var(--mono); font-size: 12px; letter-spacing: .2em; color: var(--accent); margin-bottom: 8px; }
+  h2 { font-size: 26px; font-weight: 780; letter-spacing: .01em; margin-bottom: 8px; }
+  .sec-lead { color: var(--ink-2); font-size: 15.5px; max-width: 680px; margin-bottom: 26px; }
+
+  /* 痛点卡 */
+  .pains { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .pains { grid-template-columns: 1fr; } }
+  .pain {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 18px 20px 14px;
+  }
+  .pain .from { font-size: 15px; font-weight: 700; color: var(--ink-2); text-decoration: line-through; text-decoration-color: #d3b9a5; text-decoration-thickness: 2px; margin-bottom: 8px; }
+  .pain .to { font-size: 14.5px; color: var(--ink); line-height: 1.8; }
+  .pain .to b { color: var(--accent); }
+
+  /* 适合/不适合 */
+  .fit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 640px) { .fit-grid { grid-template-columns: 1fr; } }
+  .fit, .unfit { border-radius: 14px; padding: 18px 20px 12px; border: 1px solid var(--line); background: var(--panel); }
+  .fit { border-color: #cfe0d3; }
+  .unfit { border-color: #e8d2d2; }
+  .fit h3, .unfit h3 { font-size: 15px; margin-bottom: 10px; }
+  .fit h3 { color: var(--ok); } .unfit h3 { color: var(--no); }
+  .fit ul, .unfit ul { list-style: none; }
+  .fit li, .unfit li { font-size: 14px; color: var(--ink-2); margin-bottom: 8px; padding-left: 20px; position: relative; }
+  .fit li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+  .unfit li::before { content: "✕"; position: absolute; left: 0; color: var(--no); font-weight: 700; }
+  .gate {
+    margin-top: 16px; padding: 16px 20px; border-left: 3px solid var(--accent-2);
+    background: var(--soft); border-radius: 0 12px 12px 0; font-size: 15px;
+  }
+  .gate b { color: var(--accent); }
+
+  /* ---------- Loop 图 ---------- */
+  .loopwrap { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px 22px 26px; }
+  .tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 6px; }
+  .tabs button {
+    font-family: var(--sans); font-size: 13.5px; font-weight: 600; color: var(--ink-2);
+    border: 1px solid var(--line-2); background: var(--bg); border-radius: 999px;
+    padding: 7px 16px; cursor: pointer; transition: all .15s;
+  }
+  .tabs button:hover { border-color: var(--accent-2); color: var(--accent); }
+  .tabs button.on { background: #241d18; color: #fbd7b3; border-color: #241d18; }
+  .tabcap { font-size: 13px; color: var(--ink-3); margin: 8px 2px 18px; }
+  .tabpane { display: none; }
+  .tabpane.on { display: block; animation: fadein .25s ease; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+  .flow { display: flex; flex-direction: column; align-items: center; }
+  .fnode {
+    background: var(--bg); border: 1.5px solid var(--line-2); border-radius: 12px;
+    padding: 9px 22px; font-size: 14.5px; text-align: center; max-width: 500px; line-height: 1.7;
+  }
+  .fnode small { display: block; font-size: 12px; color: var(--ink-3); }
+  .fnode.you {
+    background: var(--you-bg); border-color: var(--you-bd); color: var(--you-ink);
+    font-weight: 700; box-shadow: 0 3px 12px rgba(194,65,12,.12);
+  }
+  .fnode.you .tag {
+    display: inline-block; font-size: 11px; font-family: var(--mono); background: var(--accent-2);
+    color: #fff; border-radius: 6px; padding: 0 8px; margin-right: 8px; vertical-align: 1px; letter-spacing: .08em;
+  }
+  .fnode.dark { background: #241d18; border-color: #241d18; color: #f4ede4; }
+  .fnode.dark small { color: #b8aa9c; }
+  .fnode.loopback { border-style: dashed; color: var(--accent); font-weight: 600; background: #fff; }
+  .farrow { color: var(--accent-2); font-weight: 800; font-size: 15px; padding: 3px 0; line-height: 1; }
+  .farrow small { color: var(--ink-3); font-weight: 500; font-size: 11.5px; margin-left: 8px; }
+  .fsplit { width: 100%; max-width: 560px; margin: 4px 0; }
+  .fsplit .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .fsplit .cols { grid-template-columns: 1fr; } }
+  .fsplit .col { display: flex; flex-direction: column; align-items: center; }
+  .fsplit .edge { font-size: 12px; color: var(--ink-3); padding: 2px 0 4px; }
+  .fsplit .edge b { color: var(--accent); }
+  .flow-legend { margin-top: 18px; font-size: 12.5px; color: var(--ink-3); text-align: center; }
+  .flow-legend .chip-you { display: inline-block; background: var(--you-bg); border: 1px solid var(--you-bd); color: var(--you-ink); font-weight: 700; border-radius: 6px; padding: 0 8px; font-size: 11.5px; }
+  .loopnote { margin-top: 22px; padding: 14px 18px; border-radius: 12px; background: var(--soft); font-size: 14px; color: var(--ink-2); }
+  .loopnote b { color: var(--accent); }
+
+  /* ---------- 对话演示 ---------- */
+  .chat { display: flex; flex-direction: column; gap: 14px; margin-top: 4px; }
+  .msg { max-width: 88%; border-radius: 16px; padding: 14px 18px; font-size: 14.5px; line-height: 1.85; }
+  .msg .who { display: block; font-size: 11.5px; font-family: var(--mono); letter-spacing: .12em; margin-bottom: 6px; }
+  .msg.user { align-self: flex-end; background: #ece7df; color: var(--ink); border-bottom-right-radius: 4px; }
+  .msg.user .who { color: var(--ink-3); text-align: right; }
+  .msg.temper { align-self: flex-start; background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--accent-2); border-bottom-left-radius: 4px; }
+  .msg.temper .who { color: var(--accent); }
+  .msg.temper b.k { color: var(--accent); font-weight: 700; }
+  .msg.temper .muted { color: var(--ink-3); font-size: 12.5px; }
+  .chat-cap { margin-top: 20px; text-align: center; font-size: 15px; font-weight: 650; color: var(--ink); }
+  .chat-cap b { color: var(--accent); }
+
+  /* ---------- 四样交付 ---------- */
+  .four { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+  .four .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 16px 12px; }
+  .four .card .n { font-family: var(--mono); font-size: 12px; color: var(--accent); margin-bottom: 6px; }
+  .four .card .t { font-weight: 750; font-size: 15.5px; margin-bottom: 6px; }
+  .four .card p { font-size: 13px; color: var(--ink-2); margin: 0; line-height: 1.7; }
+
+  /* ---------- 折叠高级信息 ---------- */
+  .biganswer { font-size: clamp(20px, 3vw, 26px); font-weight: 750; margin: 4px 0 8px; }
+  .biganswer em { font-style: normal; color: var(--accent); }
+  .qa { margin-top: 14px; }
+  .qa details {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 13px;
+    padding: 0; margin-bottom: 10px; overflow: hidden;
+  }
+  .qa details summary {
+    cursor: pointer; list-style: none; padding: 14px 20px;
+    font-weight: 650; font-size: 15px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .qa details summary::-webkit-details-marker { display: none; }
+  .qa details summary::after { content: "+"; color: var(--accent); font-weight: 800; font-size: 18px; }
+  .qa details[open] summary::after { content: "–"; }
+  .qa details[open] summary { border-bottom: 1px dashed var(--line); }
+  .qa .a { padding: 12px 20px 16px; font-size: 14.5px; color: var(--ink-2); }
+  .qa .a b { color: var(--ink); }
+  .deep-link { margin-top: 16px; font-size: 14px; color: var(--ink-3); }
+
+  /* ---------- 开始 ---------- */
+  .start-box { background: #241d18; border-radius: 18px; padding: 34px 30px; color: #f4ede4; }
+  .start-box h3 { color: #fdba74; font-size: 13px; font-family: var(--mono); letter-spacing: .2em; margin-bottom: 14px; }
+  .start-box .lines { display: flex; flex-direction: column; gap: 10px; margin: 14px 0 22px; }
+  .start-box .line {
+    font-size: 15px; background: rgba(255,255,255,.06); border: 1px solid rgba(253,186,116,.25);
+    border-radius: 11px; padding: 11px 16px; color: #f0e7dc;
+  }
+  .start-box .first {
+    font-size: 13.5px; color: #c9bfb4; line-height: 1.9;
+  }
+  .start-box .first code {
+    font-family: var(--mono); font-size: 12.5px; color: #fdba74; background: rgba(234,88,12,.15);
+    border-radius: 6px; padding: 1px 7px;
+  }
+  .start-box .first b { color: #fff; }
+
+  footer { max-width: 820px; margin: 30px auto 0; padding: 26px 24px 56px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 13px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+  footer .mono { font-family: var(--mono); font-size: 12px; }
+
+  #toast {
+    position: fixed; left: 50%; bottom: 34px; transform: translateX(-50%) translateY(20px);
+    background: #241d18; color: #fbd7b3; font-size: 13.5px; padding: 10px 22px; border-radius: 999px;
+    opacity: 0; pointer-events: none; transition: all .25s; z-index: 99;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">AGENT SKILL · START HERE</div>
+    <h1>淬炼<span class="en">temper</span></h1>
+    <p class="promise">你把任务交给它。它带你一轮一轮<em>搞清楚、搞稳定</em>——你只在它真正需要你的地方介入。</p>
+    <p class="sub">不用学任何方法论。说出你的任务，它先读懂你的项目，然后告诉你：现在是什么状态、下一步最值得做什么、需要你给什么。每轮跑完，固定拿到四样东西。</p>
+    <div class="startline">
+      <div class="box" id="copyline" title="点击复制">
+        <span class="lbl">开场只需要说一句（点击复制）</span>
+        我先看看你现在这个任务做到哪了，再告诉你下一步最值得做什么。
+      </div>
+    </div>
+    <div class="ctas">
+      <a class="btn primary" href="#start">立刻开始第一轮</a>
+      <a class="btn ghost" href="#demo">看它带我跑的样子</a>
+    </div>
+    <div class="facts">
+      <span class="fact">一轮最多打扰你 <b>2 次</b></span>
+      <span class="fact">每轮固定拿到 <b>4 样东西</b></span>
+      <span class="fact">方法论是它自己的，<b>不用你学</b></span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 01 能帮我解决什么 ============ -->
+<section id="help">
+  <div class="sec-kicker">01 · WHAT IT FIXES</div>
+  <h2>它能帮我解决什么</h2>
+  <p class="sec-lead">如果你正在经历下面任何一个时刻，它就是为你做的。左边划掉的是现状，右边是它接手之后。</p>
+  <div class="pains">
+    <div class="pain"><div class="from">「AI 结果时好时坏，不知道为什么」</div><div class="to">它先只读你的项目找出不稳的根源，然后建<b>最小回归集</b>——以后每改一版，好坏有据可比。</div></div>
+    <div class="pain"><div class="from">「跑了五个版本，说不清哪版更好」</div><div class="to">每代给一份<b>人工可读的差异报告</b>：哪些变好、哪些变差、哪些看不出来——逐条链到具体 case。</div></div>
+    <div class="pain"><div class="from">「需求 / 口径还在变，文档开始失控」</div><div class="to">它先找<b>当前事实源</b>、只补缺口不另起炉灶；口径变了显式重开一段，<b>不偷偷换尺子</b>。</div></div>
+    <div class="pain"><div class="from">「不知道该信 AI 的判断还是自己再看一遍」</div><div class="to">它区分「我能自动判断的」和「<b>必须你裁决的</b>」——你只看它圈出来的那几条，不用全检。</div></div>
+  </div>
+</section>
+
+<!-- ============ 02 适不适合我 ============ -->
+<section id="fit">
+  <div class="sec-kicker">02 · IS IT FOR ME</div>
+  <h2>适不适合我</h2>
+  <p class="sec-lead">一个判断就够：</p>
+  <div class="fit-grid">
+    <div class="fit">
+      <h3>✓ 适合，如果……</h3>
+      <ul>
+        <li>任务是重复跑的，这次的错误下次还会出现</li>
+        <li>「怎样做对」还没完全定型，要靠真实反馈逐渐清楚</li>
+        <li>需要版本之间可比较、可追溯</li>
+        <li>有些判断只有你或业务同事能做</li>
+      </ul>
+    </div>
+    <div class="unfit">
+      <h3>✕ 不适合，如果……</h3>
+      <ul>
+        <li>一次性脚本、确定性转换（CSV → JSON）</li>
+        <li>人工几分钟就能稳定搞定、偶尔一次的事</li>
+        <li>没有任何真实反馈来源的问题</li>
+        <li>纯战略、纯组织问题</li>
+      </ul>
+    </div>
+  </div>
+  <div class="gate">它自己的判断标准：<b>下次遇到同类任务，这次留下的证据会不会让结果明显更好？</b>不会的话，它会直接帮你把事做完，不建循环。</div>
+</section>
+
+<!-- ============ 03 它准备怎么带我跑 ============ -->
+<section id="loop">
+  <div class="sec-kicker">03 · HOW IT RUNS YOU</div>
+  <h2>它准备怎么带我跑</h2>
+  <p class="sec-lead">这张图就是它的主界面——<b>它随你的任务状态变化</b>：你现在缺什么，图就长什么样。橙色高亮的是唯一需要你的地方。</p>
+  <div class="loopwrap">
+    <div class="tabs" id="tabs">
+      <button class="on" data-tab="t2">标准 · 人机协同（多数任务从这开始）</button>
+      <button data-tab="t1">探索期 · 比如数据分析</button>
+      <button data-tab="t3">成熟期 · 稳定优化</button>
+    </div>
+    <div class="tabcap" id="tabcap">任务能跑、目标大致清楚，但还没有可信的尺子——先一起把循环转起来。</div>
+
+    <!-- 图2：标准人机协同（默认） -->
+    <div class="tabpane on" id="t2">
+      <div class="flow">
+        <div class="fnode">你说出任务<small>一句话就够</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">它读懂项目<small>只读：README、方法、运行记录、Git 近况——不动任何东西</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode you"><span class="tag">你</span>确认方向<small>看它的判断和计划，回「行」或改</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">搭刚好够的结构<small>先给「复用 X / 新增 Y」清单，批准才动手</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">跑一代<small>运行 + 独立记录</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">对比上一版<small>差异 · 回归 · 证据，逐条链到 case</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode you"><span class="tag">你</span>拍板<small>采用 / 回滚 / 按建议再跑一代</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode loopback">↺ 更新状态页，进入下一代</div>
+        <div class="farrow">↓</div>
+        <div class="fsplit">
+          <div class="cols">
+            <div class="col"><div class="edge">目标 / 口径 / 评测尺子<b>实质变化</b></div><div class="fnode">显式重开一段<small>换新尺子，历史不断线</small></div></div>
+            <div class="col"><div class="edge">任务<b>稳定</b>了</div><div class="fnode dark">收尾<small>只留状态页 + 已验证经验</small></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 图1：探索期 -->
+    <div class="tabpane" id="t1">
+      <div class="flow">
+        <div class="fnode">现有业务需求<small>可能连业务自己都还没说全</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">读取已有资料和数据</div>
+        <div class="farrow">↓</div>
+        <div class="fnode">形成当前理解<small>同时列出：哪些还不知道</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">先搭指标 / 取数框架<small>第一版的目的不是「好」，是暴露我们不知道什么</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">发现未知口径</div>
+        <div class="farrow">↓</div>
+        <div class="fnode you"><span class="tag">你</span>找业务 / 人工确认<small>只带上它圈出的未知点</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">更新业务理解</div>
+        <div class="farrow">↓</div>
+        <div class="fnode">再调整取数和指标</div>
+        <div class="farrow">↓</div>
+        <div class="fnode dark">形成当前可信口径</div>
+      </div>
+      <div class="loopnote">这个阶段它<b>不会</b>跟你提候选版本、回归、晋升——那些是任务成熟以后才出现的东西。现在唯一的目标：把「什么叫做对」弄清楚。</div>
+    </div>
+
+    <!-- 图3：成熟期 -->
+    <div class="tabpane" id="t3">
+      <div class="flow">
+        <div class="fnode dark">当前 Baseline<small>已确认合格的正式版本</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">运行 Candidate<small>新想法先当候选，不碰正式版</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">自动 Eval + Diff</div>
+        <div class="farrow">↓</div>
+        <div class="fnode">问题分析</div>
+        <div class="farrow">↓</div>
+        <div class="fsplit">
+          <div class="cols">
+            <div class="col"><div class="edge"><b>自动可验证</b></div><div class="fnode">AI 继续修改</div></div>
+            <div class="col"><div class="edge"><b>业务争议</b></div><div class="fnode you"><span class="tag">你</span>人工确认</div></div>
+          </div>
+        </div>
+        <div class="farrow">↓</div>
+        <div class="fnode">Regression<small>修过的旧问题有没有悄悄回来</small></div>
+        <div class="farrow">↓</div>
+        <div class="fnode">够格晋升吗？</div>
+        <div class="fsplit">
+          <div class="cols">
+            <div class="col"><div class="edge"><b>否</b></div><div class="fnode loopback">↺ 再改</div></div>
+            <div class="col"><div class="edge"><b>是</b></div><div class="fnode dark">新 Baseline<small>证据齐了才晋升</small></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="loopnote">到了这个阶段它高度自动，但<b>晋升必须留证据、高风险必须留人工 Gate</b>——自动化减少的是你的注意力，不是系统的可观察性。</div>
+    </div>
+
+    <div class="flow-legend"><span class="chip-you">你</span> = 唯一需要你介入的节点，其余它自己扛</div>
+  </div>
+</section>
+
+<!-- ============ 04 一轮真实的第一轮 ============ -->
+<section id="demo">
+  <div class="sec-kicker">04 · FIRST ROUND, LIVE</div>
+  <h2>一轮真实的第一轮长什么样</h2>
+  <p class="sec-lead">场景：法规资讯筛选，每周自动跑，结果时好时坏。从「完全不知道它是什么」到跑完第一轮——</p>
+  <div class="chat">
+    <div class="msg user"><span class="who">你</span>这是我现在的项目，法规资讯筛选，每周自动跑，结果时好时坏。帮我弄稳定。</div>
+    <div class="msg temper"><span class="who">淬炼</span>
+      <b class="k">【判断】</b>能跑，但没尺子：方法（prompts/v3.md）里「相关」只有一句话定义，判断全靠模型现场拿捏；两次运行记录只有输出、没存输入，坏 case 没法复现。<br>
+      <b class="k">【计划】</b>① 我聚类最近运行的错误类型 → ② 起草带判定标准和边界案例的 V4 → ③ 同一批输入跑 V3 vs V4，给你一份差异表。<br>
+      <b class="k">【需要你】</b>两样：① 业务上最不能接受的错误是哪类？（<span class="muted">默认：漏报——该报的没报</span>）② 给我 3–5 条你觉得有代表性的真实资讯。
+    </div>
+    <div class="msg user"><span class="who">你</span>漏报最不能接受。这 5 条是我们最近人工核过的。</div>
+    <div class="msg temper"><span class="who">淬炼</span>
+      收到，够了。先跑一版 V0——<b>目的不是证明方法好，而是暴露哪些地方我们还不知道</b>。<br><br>
+      ……跑完了。发现三类问题：<br>
+      ① 判定标准缺失 → <b>我处理</b>；<br>
+      ② 运行记录缺输入原文 → <b>我处理</b>；<br>
+      ③ 「相关」的边界有 2 条 case 口径冲突 → <b>需要你</b>。你只需要看这两条：case 03、case 14。<span class="muted">（各 1 分钟）</span>
+    </div>
+    <div class="msg user"><span class="who">你</span>这两条按人工口径应该算不相关。</div>
+    <div class="msg temper"><span class="who">淬炼</span>
+      已更新业务理解，写进回归集。下一代计划：起草 V4 判定标准 + 固化 8 条回归案例。预计只再需要你一次：V4 vs V3 的差异确认。
+    </div>
+  </div>
+  <div class="chat-cap">整个第一轮，你一共说了 <b>三句话</b>。</div>
+</section>
+
+<!-- ============ 05 每轮固定拿到什么 ============ -->
+<section id="deliver">
+  <div class="sec-kicker">05 · EVERY ROUND</div>
+  <h2>每轮你固定拿到什么</h2>
+  <p class="sec-lead">四样东西，每轮都有，一样不少——哪天少了一样，就是它的 bug。</p>
+  <div class="four">
+    <div class="card"><div class="n">①</div><div class="t">结果</div><p>这轮做了什么，产物在哪。</p></div>
+    <div class="card"><div class="n">②</div><div class="t">差异</div><p>和上一版比：变好 / 变差 / 看不出来，逐条链到 case。</p></div>
+    <div class="card"><div class="n">③</div><div class="t">建议</div><p>采用 / 不采用 / 再跑一代，附理由和证据等级。</p></div>
+    <div class="card"><div class="n">④</div><div class="t">待你确认</div><p>最多 1–2 件，每件带默认推荐——回「行」就走。</p></div>
+  </div>
+</section>
+
+<!-- ============ 06 需要学什么 ============ -->
+<section id="learn">
+  <div class="sec-kicker">06 · DO I NEED TO LEARN ANYTHING</div>
+  <h2>我需要先学点什么吗</h2>
+  <p class="biganswer">不用。<em>方法论是淬炼自己的，不是让你学的。</em></p>
+  <p class="sec-lead">你只需要看到：现在是什么问题 → 它准备怎么做 → 你现在要做什么 → 做完发生了什么 → 下一步。下面这些是它的内部机制——好奇再点开，不点完全不影响使用。</p>
+  <div class="qa">
+    <details><summary>它怎么保证不偷偷换标准？</summary><div class="a">一段时间内「什么叫做对」被冻结，只迭代「怎么做」；如果目标或口径真的变了，它会<b>显式宣布重开一段</b>并告诉你哪些历史结果还能比，而不是悄悄改尺子后继续声称新版更好。</div></details>
+    <details><summary>它说「采用了」就等于「验证过」了吗？</summary><div class="a">不。它严格区分三个版本：<b>工作版本</b>（日常演进，可逆）、<b>业务校准版本</b>（业务确认过）、<b>生产版本</b>（对外跑着）。更新一个不自动更新另一个——便宜证据推不动业务确认。</div></details>
+    <details><summary>它凭什么说「变好了」？</summary><div class="a">证据分六层，从结构校验到业务打标可信度递增。它会告诉你<b>当前结论站在哪一层证据上</b>——便宜证据只支持继续试，说「业务上变好了」必须高层证据。</div></details>
+    <details><summary>什么时候必须我出面？</summary><div class="a">四类节点：<b>方向确认、拍板、业务裁决、高风险判断</b>。其余它自己扛。随着任务成熟，你的介入只会越来越少——人机边界本身也是被它持续优化的对象。</div></details>
+    <details><summary>它会乱建文件、动我的项目吗？</summary><div class="a">进入时<b>只读</b>；要建结构会先给「复用 X / 新增 Y」清单等你批准；现有文件能承载就更新现有的，不另起炉灶。你只要分析不要动手时，它给完判断就停。</div></details>
+  </div>
+  <div class="deep-link">想看完整机制与设计思想：同目录《<a href="temper-淬炼-设计思想与完整机制.html">淬炼 · 设计思想与完整机制</a>》</div>
+</section>
+
+<!-- ============ 07 立刻开始 ============ -->
+<section id="start">
+  <div class="sec-kicker">07 · START NOW</div>
+  <h2>立刻开始第一轮</h2>
+  <div class="start-box">
+    <h3>JUST SAY ONE LINE</h3>
+    <p style="font-size:16px; color:#f0e7dc;">在支持 Skills 的 Agent 里输入 <span style="font-family:var(--mono); color:#fdba74;">$temper</span>，或者直接这样开口：</p>
+    <div class="lines">
+      <div class="line">「这是我现在的项目，帮我看看怎么把结果弄稳定」</div>
+      <div class="line">「这任务跑了几个版本了，说不清哪版好」</div>
+      <div class="line">「我有个想法，还不知道怎么做成能交付的方法」</div>
+    </div>
+    <p class="first">然后它的<b>第一轮回应</b>固定长这样：<br>
+    <code>【判断】</code>你现在的状态 + 一句为什么（引用项目里的真实文件，不空谈）<br>
+    <code>【计划】</code>接下来 2–3 步，每步说清产出什么<br>
+    <code>【需要你】</code>最多 2 样东西，每样带默认——你回「行」即走，回改即调</p>
+    <p class="first" style="margin-top:12px;">随时可以说「先只分析，什么都别动」——它会停在只读。每轮最多拍一次板，这就是全部负担。</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div>淬炼 temper · 用户首页 · 2026-08-26</div>
+  <div class="mono">深度文档：temper-淬炼-设计思想与完整机制.html（同目录）</div>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+(function () {
+  // Tab 切换
+  var caps = {
+    t1: '目标还没定型（比如数据分析口径未定）——现在唯一的目标是把「什么叫做对」弄清楚。',
+    t2: '任务能跑、目标大致清楚，但还没有可信的尺子——先一起把循环转起来。',
+    t3: '任务已稳定运行、证据充足——它高度自动，你只剩争议裁决和晋升确认。'
+  };
+  var tabs = document.querySelectorAll('#tabs button');
+  tabs.forEach(function (b) {
+    b.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.classList.remove('on'); });
+      b.classList.add('on');
+      document.querySelectorAll('.tabpane').forEach(function (p) { p.classList.remove('on'); });
+      document.getElementById(b.dataset.tab).classList.add('on');
+      document.getElementById('tabcap').textContent = caps[b.dataset.tab];
+    });
+  });
+
+  // 复制开场句
+  var box = document.getElementById('copyline');
+  var toast = document.getElementById('toast');
+  box.addEventListener('click', function () {
+    var text = '我先看看你现在这个任务做到哪了，再告诉你下一步最值得做什么。';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { show('已复制，去对它说就行'); },
+                                                function () { show(text); });
+    } else { show(text); }
+  });
+  function show(msg) {
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(show._t);
+    show._t = setTimeout(function () { toast.classList.remove('show'); }, 2200);
+  }
+})();
+</script>
+</body>
+</html>

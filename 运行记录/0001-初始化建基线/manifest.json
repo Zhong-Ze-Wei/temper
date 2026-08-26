@@ -1,0 +1,35 @@
+{
+  "run_id": "0001-初始化建基线",
+  "timestamp": "2026-08-26",
+  "stage": "formation",
+  "local_stage": "eval_building",
+  "intensity": "standard",
+  "comparison_status": "baseline_pending",
+  "epoch": null,
+  "purpose": "用 temper 方法论迭代 temper 自身：建立标准迭代结构与评测基线（愿景基线对照），本轮不动 SKILL.md 本体",
+  "change_relation": "exploration",
+  "method_ref": {
+    "canonical": "/Users/zhong/.agents/skills/temper",
+    "sk_skill_hash": "f6fa3a1b294a520ad620d7be04816a0b69be24d76eb7ba84f193a5b6322c8965",
+    "unmodified": true
+  },
+  "evidence_level": "fixed_baseline_pending_human_review",
+  "inputs": [
+    "/Users/zhong/code/temper/temper_docs/",
+    "/Users/zhong/code/temper/temper-淬炼-开始使用.html",
+    "/Users/zhong/.agents/skills/temper/SKILL.md",
+    "/Users/zhong/.agents/skills/temper/references/"
+  ],
+  "artifacts": {
+    "definition": "项目定义/当前定义.md",
+    "status": "循环/当前状态.md",
+    "overview": "循环/循环总览.md",
+    "method": "方法/当前方法.md",
+    "eval": "评测/评测说明.md",
+    "eval_baseline": "评测/愿景基线对照.md",
+    "state": ".temper/state.json"
+  },
+  "decisions_path": "运行记录/0001-初始化建基线/决策.md",
+  "run_status": "created",
+  "notes": "发现注册表(0.0.2)与本地SKILL.md(0.0.1)版本描述漂移；设计思想HTML在废纸篓待清理"
+}

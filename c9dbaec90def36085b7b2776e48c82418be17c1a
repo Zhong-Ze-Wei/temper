@@ -1,0 +1,32 @@
+README.md
+  c1f322e77ee1ae44 1,3,7,9,11-30,32,34-37,39,41-44,48,50,52,54-56,64-67,72,74-80,82
+versions/v0.1.0-candidate/SKILL.md
+  c1f322e77ee1ae44 12,14,16,18-21,23,29,31,33,35,37-39,41,43,45,47-51,55,57,59-63,65,69,71,73,75-76,78,82,84,86,88,90,92,94,96,98,100,102,104,106,108,112,114
+.temper/state.json
+  c1f322e77ee1ae44 14-15,29-30,39-42,44,49-50,52-53
+VERSION.md
+  c1f322e77ee1ae44 1,3,5-8,12,14-34,36,38-41
+versions/v0.0.1/SKILL.md
+  c1f322e77ee1ae44 1-89
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c9dbaec90def36085b7b2776e48c82418be17c1a",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 888,
+      "total_deletions": 2403,
+      "accepted_lines": 486,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/ac55d011911b2d52f0270c00c55d3bc6b94fe490b347e989acb3f2cda37907e8"
+    }
+  }
+}

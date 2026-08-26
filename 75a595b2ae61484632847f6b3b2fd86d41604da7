@@ -1,0 +1,26 @@
+README.md
+  c1f322e77ee1ae44 1-55
+.temper/state.json
+  c1f322e77ee1ae44 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "75a595b2ae61484632847f6b3b2fd86d41604da7",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 94,
+      "total_deletions": 0,
+      "accepted_lines": 94,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/d98e176b9ed83bcc38ea6f8bdab633bf16cee976e73a2d443abe0496bcb17528"
+    }
+  }
+}

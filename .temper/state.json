@@ -11,8 +11,8 @@
   "comparison_status": "epoch1_frozen",
   "epoch": 1,
   "epoch_contract": {
-    "goal": "SKILL.md 用户体验层对齐设计愿景（用户面交互契约）",
-    "ruler": "评测/愿景基线对照.md (v0)",
+    "goal": "SKILL.md 用户体验层对齐设计愿景（用户面交互契约），且让用户看得懂当前在改什么",
+    "ruler": "runs/0002-候选E1用户体验层重构/愿景基线对照.md (v0)",
     "scope": [
       "P0-1 复杂度在后台/progressive disclosure",
       "P0-2 带着用户做 vs 让用户学（对话契约）",
@@ -26,8 +26,8 @@
     ]
   },
   "versions": {
-    "working": "方法/当前方法.md",
-    "candidate": "方法/候选方法/",
+    "working": "SKILL.md",
+    "candidate": "versions/v0.1.0-candidate",
     "last_business_validated": null,
     "production": null,
     "active_experiments": [
@@ -36,24 +36,21 @@
   },
   "current_step": "candidate-e1-ux-contract",
   "paths": {
-    "definition": "项目定义/当前定义.md",
-    "status": "循环/当前状态.md",
-    "overview": "循环/循环总览.md",
-    "method": "方法/当前方法.md",
-    "candidate": "方法/候选方法/",
-    "skill_source": "skill/temper",
+    "working_skill": "SKILL.md",
+    "version_hist": "VERSION.md",
+    "candidate": "versions/v0.1.0-candidate",
+    "version_snapshot_v001": "versions/v0.0.1",
     "eval": "评测/评测说明.md",
-    "eval_baseline": "评测/愿景基线对照.md",
-    "runs": "运行记录",
+    "runs": "runs",
     "vision_docs": "temper_docs",
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "运行记录/0003-元层修正",
-  "next_action": "用户验收候选 0.1.0（讲人话版 SKILL.md + interaction-contract）",
+  "last_run": "runs/0003-元层修正",
+  "next_action": "用户验收候选 v0.1.0（professional 版 SKILL.md + interaction-contract）",
   "human_attention": [
-    "验收候选 0.1.0 是否符合'用户体验层对齐愿景 + 讲人话'",
-    "采纳：候选同步到 skill/temper/ 与安装位置 ~/.agents/skills/temper（不自动）",
+    "验收候选 v0.1.0 是否符合'用户体验层对齐愿景'",
+    "采纳：候选晋升为正式版（更新根 SKILL.md）与安装位置 ~/.agents/skills/temper（不自动）",
     "版本号策略：0.1.0？如何对齐注册表 0.0.2？",
     "是否走发布链（外发，需单独确认）"
   ]

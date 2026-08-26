@@ -12,7 +12,7 @@
   "epoch": 1,
   "epoch_contract": {
     "goal": "SKILL.md 用户体验层对齐设计愿景（用户面交互契约），且让用户看得懂当前在改什么",
-    "ruler": "runs/0002-候选E1用户体验层重构/愿景基线对照.md (v0)",
+    "ruler": "迭代记录/0002-候选E1用户体验层重构/愿景基线对照.md (v0)",
     "scope": [
       "P0-1 复杂度在后台/progressive disclosure",
       "P0-2 带着用户做 vs 让用户学（对话契约）",
@@ -27,7 +27,7 @@
   },
   "versions": {
     "working": "SKILL.md",
-    "candidate": "versions/v0.0.3-candidate",
+    "candidate": "版本/v0.0.3-候选",
     "last_business_validated": null,
     "production": null,
     "active_experiments": [
@@ -37,17 +37,17 @@
   "current_step": "candidate-e0.0.3-ux-contract",
   "paths": {
     "working_skill": "SKILL.md",
-    "version_hist": "VERSION.md",
-    "candidate": "versions/v0.0.3-candidate",
-    "version_snapshot_v001": "versions/v0.0.1",
+    "version_hist": "版本/版本说明.md",
+    "candidate": "版本/v0.0.3-候选",
+    "version_snapshot_v001": "版本/v0.0.1",
     "eval": "评测/评测说明.md",
-    "runs": "runs",
-    "vision_docs": "temper_docs",
+    "runs": "迭代记录",
+    "vision_docs": "设计资料",
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "runs/0006-测试任务A-B-C",
-  "next_action": "用户决定候选 v0.0.3 是否采纳为正式版（A/B/C 测试全通过）",
+  "last_run": "迭代记录/0007-目录中文化",
+  "next_action": "用户验收：新中文目录结构 + 版本说明 diff + 候选 v0.0.3 是否采纳",
   "human_attention": [
     "验收：A/B/C 测试全通过，候选 v0.0.3 核心成立，是否采纳为正式版",
     "采纳：候选晋升为根 SKILL.md 并同步安装位置 ~/.agents/skills/temper（不自动）",

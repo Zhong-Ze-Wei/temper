@@ -1,0 +1,34 @@
+.temper/state.json
+  c1f322e77ee1ae44 15,30,40-42,44-45,49-50
+README.md
+  c1f322e77ee1ae44 12,32-38,55-57,65-69,80
+版本/v0.0.3-候选/references/project-structure.md
+  c1f322e77ee1ae44 11-13
+评测/测试任务集.md
+  c1f322e77ee1ae44 114,119
+评测/评测说明.md
+  c1f322e77ee1ae44 9,16
+版本/版本说明.md
+  c1f322e77ee1ae44 1,3,5,7-11,15-17,25,28,35,41,43-105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "4a01cbb35d3e08ed6f73eb44902294514bd68a63",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 3762,
+      "total_deletions": 89,
+      "accepted_lines": 3662,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/ae70b2f0f20af942f06b1ba7dc06e98ddd5780b47ff0c6adedde7a7a785c0ddf"
+    }
+  }
+}

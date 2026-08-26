@@ -41,6 +41,7 @@
     "overview": "循环/循环总览.md",
     "method": "方法/当前方法.md",
     "candidate": "方法/候选方法/",
+    "skill_source": "skill/temper",
     "eval": "评测/评测说明.md",
     "eval_baseline": "评测/愿景基线对照.md",
     "runs": "运行记录",
@@ -48,11 +49,12 @@
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "运行记录/0001-初始化建基线",
-  "next_action": "生成候选方法（SKILL.md 用户体验层重构 + references 分层），对照愿景基线自评并产出人工 diff",
+  "last_run": "运行记录/0003-元层修正",
+  "next_action": "用户验收候选 0.1.0（讲人话版 SKILL.md + interaction-contract）",
   "human_attention": [
-    "验收候选方法的人工 diff 与自评（P0/P1 是否消除）",
-    "确认后才采纳到安装位置 ~/.agents/skills/temper（不自动采纳）",
-    "确认后是否走 cskills 发布链（外发动作，另行确认）"
+    "验收候选 0.1.0 是否符合'用户体验层对齐愿景 + 讲人话'",
+    "采纳：候选同步到 skill/temper/ 与安装位置 ~/.agents/skills/temper（不自动）",
+    "版本号策略：0.1.0？如何对齐注册表 0.0.2？",
+    "是否走发布链（外发，需单独确认）"
   ]
 }

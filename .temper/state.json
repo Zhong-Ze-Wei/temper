@@ -46,13 +46,13 @@
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "runs/0005-codex评审与修正",
-  "next_action": "用户验收候选 v0.0.3（已按 codex 三类修正处理）",
+  "last_run": "runs/0006-测试任务A-B-C",
+  "next_action": "用户决定候选 v0.0.3 是否采纳为正式版（A/B/C 测试全通过）",
   "human_attention": [
-    "验收候选 v0.0.3 是否符合'用户体验层对齐愿景'（已按 codex 修正三类问题）",
-    "采纳：候选晋升为正式版（更新根 SKILL.md）与安装位置 ~/.agents/skills/temper（不自动）",
-    "版本号策略：小步进 0.0.x；是否对齐注册表 0.0.2",
+    "验收：A/B/C 测试全通过，候选 v0.0.3 核心成立，是否采纳为正式版",
+    "采纳：候选晋升为根 SKILL.md 并同步安装位置 ~/.agents/skills/temper（不自动）",
+    "版本号：正式 0.0.2 / 候选 0.0.3；是否对齐注册表 0.0.2",
     "是否走发布链（外发，需单独确认）",
-    "运行 A/B/C 测试任务验证 temper 真实行为（测试集在 评测/测试任务集.md）"
+    "测试集 A/B/C 是否作为长期回归依据保留"
   ]
 }

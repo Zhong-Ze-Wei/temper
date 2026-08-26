@@ -1,0 +1,4 @@
+interface:
+  display_name: "淬炼"
+  short_description: "把不稳定的 AI 任务带进可比较、可追溯的迭代循环，你只在关键节点拍板"
+  default_prompt: "使用 $temper：先读懂我的任务现状，给出判断和计划，然后带我跑第一代迭代。"

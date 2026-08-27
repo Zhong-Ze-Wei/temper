@@ -15,30 +15,33 @@
     "ruler": "迭代记录/0002-候选E1用户体验层重构/愿景基线对照.md (v0)",
     "status": "已达成并采纳（v0.0.3）"
   },
+  "mode": "持续逼近",
   "versions": {
-    "working": "SKILL.md (v0.0.3)",
+    "working": "SKILL.md (v0.0.4)",
     "candidate": null,
     "last_business_validated": null,
     "production": null,
     "active_experiments": []
   },
-  "current_step": "v0.0.3-adopted",
+  "current_step": "持续逼近-0.0.4",
   "paths": {
     "working_skill": "SKILL.md",
     "version_hist": "版本/版本说明.md",
     "version_snapshot_v001": "版本/v0.0.1",
     "version_snapshot_v003": "版本/v0.0.3",
+    "version_snapshot_v004": "版本/v0.0.4",
     "eval": "评测/评测说明.md",
     "runs": "迭代记录",
+    "report": "迭代记录/汇报.md",
     "vision_docs": "设计资料",
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "迭代记录/0008-晋升v0.0.3",
-  "next_action": "开启下一轮迭代（可从小步进 0.0.4 开始，用测试集 A/B/C 回归）",
+  "last_run": "迭代记录/0009-持续逼近模式",
+  "next_action": "继续自主迭代：攒 2-3 代后向用户汇报（持续逼近模式）",
   "human_attention": [
-    "v0.0.3 已仓库内晋升，未同步安装位置与注册表（试验田纪律）",
-    "是否开启下一轮 0.0.4 迭代；建议先用 A/B/C 测试集回归一遍新正式版",
-    "是否走发布链（外发，需单独确认）"
+    "模式：持续逼近（自主多轮+攒代汇报）；人工只在业务裁决/定义变化/汇报点介入",
+    "边界：只动仓库内，不碰安装位置与注册表，不发布",
+    "攒 2-3 代后向用户 review（迭代记录/汇报.md）"
   ]
 }

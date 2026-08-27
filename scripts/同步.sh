@@ -32,12 +32,15 @@ for target in "$@"; do
       git push origin --tags
       SYNCED+=(github) ;;
     cskills)
-      # 注册表只要最小 skill 包（SKILL.md + agents/），不带仓库其余文件；publish 有交互确认，用 yes 管道
+      # 注册表只要最小 skill 包（SKILL.md + agents/），不带仓库其余文件；publish 有交互确认，printf 喂一个 y
+      # 注意：pipefail 下管道左侧被 SIGPIPE 杀死会误判失败，publish 这一段临时关闭 pipefail
       STAGE="$(mktemp -d)"
       mkdir -p "$STAGE/agents"
       cp SKILL.md "$STAGE/SKILL.md"
       cp agents/openai.yaml "$STAGE/agents/openai.yaml"
-      yes | cskills publish "$STAGE"
+      set +o pipefail
+      printf 'y\n' | cskills publish "$STAGE"
+      set -o pipefail
       rm -rf "$STAGE"
       cskills sync
       SYNCED+=(cskills) ;;

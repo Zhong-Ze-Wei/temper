@@ -17,18 +17,18 @@
   },
   "mode": "持续逼近",
   "versions": {
-    "working": "SKILL.md (v0.0.7)",
+    "working": "SKILL.md (v0.0.8)",
     "candidate": null,
     "last_business_validated": null,
     "production": null,
     "active_experiments": []
   },
-  "current_step": "持续逼近-0.0.7",
+  "current_step": "持续逼近-0.0.8",
   "paths": {
     "working_skill": "SKILL.md",
     "version_hist": "版本/版本说明.md",
-    "version_snapshot_v006": "版本/v0.0.6",
     "version_snapshot_v007": "版本/v0.0.7",
+    "version_snapshot_v008": "版本/v0.0.8",
     "eval": "评测/评测说明.md",
     "runs": "迭代记录",
     "report": "迭代记录/汇报.md",
@@ -36,13 +36,13 @@
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "迭代记录/0013-评测自动载入",
-  "next_action": "下一波：验证'评测自动载入'机制本身（需一个新评测标准测它）+ 修三处自身不一致",
+  "last_run": "迭代记录/0014-静态文件更新",
+  "next_action": "下一波：用一次真实'新评测标准'触发验证静态文件更新完整链路（触发→问用户→确认）",
   "human_attention": [
     "模式：持续逼近（自主多轮+攒代汇报）",
     "待决：是否修三处自身不一致（README 版本滞后/快照不可变/验证代不升版本号）",
     "待决：是否采纳走查发现的边界点（用户已授权迭代时首轮多久进入实际修改）",
-    "待验：'评测自动载入'机制本身（需要新评测标准来测它）",
+    "待验：静态文件更新链路（需要一次真实触发来测）",
     "边界：只动仓库内，不碰安装位置与注册表，不发布"
   ]
 }

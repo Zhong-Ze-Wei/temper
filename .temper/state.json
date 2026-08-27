@@ -17,18 +17,18 @@
   },
   "mode": "持续逼近",
   "versions": {
-    "working": "SKILL.md (v0.0.6)",
+    "working": "SKILL.md (v0.0.7)",
     "candidate": null,
     "last_business_validated": null,
     "production": null,
     "active_experiments": []
   },
-  "current_step": "持续逼近-0.0.6",
+  "current_step": "持续逼近-0.0.7",
   "paths": {
     "working_skill": "SKILL.md",
     "version_hist": "版本/版本说明.md",
-    "version_snapshot_v005": "版本/v0.0.5",
     "version_snapshot_v006": "版本/v0.0.6",
+    "version_snapshot_v007": "版本/v0.0.7",
     "eval": "评测/评测说明.md",
     "runs": "迭代记录",
     "report": "迭代记录/汇报.md",
@@ -36,13 +36,13 @@
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "迭代记录/0012-认知走查",
-  "next_action": "攒代汇报点：向用户 review 认知走查结果（4/4 通过）+ codex 评审结论",
+  "last_run": "迭代记录/0013-评测自动载入",
+  "next_action": "下一波：验证'评测自动载入'机制本身（需一个新评测标准测它）+ 修三处自身不一致",
   "human_attention": [
     "模式：持续逼近（自主多轮+攒代汇报）",
-    "⚠️ 汇报点：Cognitive Walkthrough 4 种状态全过 + codex 评审（7/10、三处自身不一致）",
     "待决：是否修三处自身不一致（README 版本滞后/快照不可变/验证代不升版本号）",
     "待决：是否采纳走查发现的边界点（用户已授权迭代时首轮多久进入实际修改）",
+    "待验：'评测自动载入'机制本身（需要新评测标准来测它）",
     "边界：只动仓库内，不碰安装位置与注册表，不发布"
   ]
 }

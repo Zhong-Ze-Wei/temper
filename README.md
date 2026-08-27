@@ -46,6 +46,6 @@
 
 ## 边界（试验田纪律）
 
-本地仓库不主动同步 GitHub / CSkills / 安装位置（`~/.agents/skills/temper`，**目前仍为 v0.0.1**）；发布是外发动作，必须用户点头。
+本地仓库不主动同步 GitHub / CSkills 注册表；发布是外发动作，必须用户点头。安装位置 `~/.agents/skills/temper` 已于 2026-08-27 经用户授权同步为 v0.1.0（注意：其 `.cskills-meta.json` 仍是 0.0.2 旧哈希，`cskills sync` 可能回退——以仓库为权威）。
 
 两个 temper 别搞混：根 `SKILL.md` + `版本/` 是权威副本（能改）；`~/.agents/skills/temper` 是部署副本（别改，会被 cskills 覆盖）。

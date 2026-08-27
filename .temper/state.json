@@ -17,18 +17,18 @@
   },
   "mode": "持续逼近",
   "versions": {
-    "working": "SKILL.md (v0.0.5)",
+    "working": "SKILL.md (v0.0.6)",
     "candidate": null,
     "last_business_validated": null,
     "production": null,
     "active_experiments": []
   },
-  "current_step": "持续逼近-0.0.5",
+  "current_step": "持续逼近-0.0.6",
   "paths": {
     "working_skill": "SKILL.md",
     "version_hist": "版本/版本说明.md",
-    "version_snapshot_v004": "版本/v0.0.4",
     "version_snapshot_v005": "版本/v0.0.5",
+    "version_snapshot_v006": "版本/v0.0.6",
     "eval": "评测/评测说明.md",
     "runs": "迭代记录",
     "report": "迭代记录/汇报.md",
@@ -36,11 +36,11 @@
     "vision_html": "temper-淬炼-开始使用.html",
     "canonical_skill": "/Users/zhong/.agents/skills/temper"
   },
-  "last_run": "迭代记录/0010-结构示例对齐",
-  "next_action": "继续自主迭代：攒够 2-3 代后向用户汇报（当前已跑 0.0.4、0.0.5）",
+  "last_run": "迭代记录/0011-正式版回归",
+  "next_action": "攒代汇报点：向用户 review 已攒的 3 代（0.0.4/0.0.5/0.0.6）",
   "human_attention": [
-    "模式：持续逼近（自主多轮+攒代汇报）；人工只在业务裁决/定义变化/汇报点介入",
-    "边界：只动仓库内，不碰安装位置与注册表，不发布",
-    "已攒 2 代（0.0.4 持续逼近模式、0.0.5 结构对齐）；再跑 1 代可向用户汇报"
+    "模式：持续逼近（自主多轮+攒代汇报）",
+    "⚠️ 汇报点：已攒 3 代（0.0.4 持续逼近模式 / 0.0.5 结构对齐 / 0.0.6 回归确认），待用户 review",
+    "边界：只动仓库内，不碰安装位置与注册表，不发布"
   ]
 }

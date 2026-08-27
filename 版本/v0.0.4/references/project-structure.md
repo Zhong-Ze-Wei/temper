@@ -49,22 +49,29 @@ README.md                    # 工作台第一屏
 
 ### 标准（要版本比较）
 
+这是真实使用验证过的**工件中心工作台**形态（本仓库即此形态）：
+
 ```text
 README.md                    # 工作台第一屏：当前版本 / 候选版本 / 现在在哪一步 / 这版改了啥
 <工件>                        # 当前版本，根目录
-versions/
+版本/
+    版本说明.md               # ★每版改了什么（人话 diff）+ 版本时间线 + 发布链
     <v0.0.1>/                # 版本快照（每版一份）
-    <v0.0.2-candidate>/      # 候选（仅在替换式迭代需要时）
-VERSION.md                   # 版本时间线 + 发布链
+    <v0.0.2-候选>/           # 候选（仅在替换式迭代需要时）
+迭代记录/
+    <run-id>/                # 每代一份：diff / 决策 / 评测
+    汇报.md                  # 持续逼近模式下的攒代汇报（可选）
 评测/
     评测说明.md               # 尺子；测试集可放这里或单独
-runs/
-    <run-id>/                # 每代一份：diff / 决策 / 评测
 .temper/
-    state.json
+    state.json               # 后台机器状态
 ```
 
-**对比旧的"多目录标准形态"（不再推荐）**：之前用 `项目定义/ 循环/ 方法/ 评测/ 运行记录/` 五个目录承载状态，真实使用后发现它把工件藏到了指针后面，人打开目录不知道在改什么。现在收敛为 **README + versions + runs + state.json** 四件套，工件在根目录。
+**命名约定**：用户工作面（顶层目录、文档名）用项目语言命名（如中文）；技术内部（references/agents 等）按发布需要可保留英文。目录名用 `<...>` 时表示"按你的工件命名"，不是字面。
+
+**对比旧的"多目录标准形态"（不再推荐）**：之前用 `项目定义/ 循环/ 方法/ 评测/ 运行记录/` 五个目录承载状态，真实使用后发现它把工件藏到了指针后面，人打开目录不知道在改什么。现在收敛为 **README + 版本/ + 迭代记录/ + state.json** 四件套，工件在根目录。
+
+**一致性规则**：方法文档里的默认形态必须与真实项目实际形态一致；若项目演化出了更好的形态，先改文档再引用，不要文档一套、项目一套。
 
 ### 严格控制
 
@@ -88,7 +95,7 @@ runs/
   "epoch": null,
   "versions": {
     "working": "SKILL.md",
-    "candidate": "versions/v0.0.2-candidate",
+    "candidate": "版本/v0.0.2-候选",
     "last_business_validated": null,
     "production": null,
     "active_experiments": []
@@ -96,8 +103,8 @@ runs/
   "current_step": "frame-first-v0",
   "paths": {
     "working_skill": "SKILL.md",
-    "version_hist": "VERSION.md",
-    "runs": "runs"
+    "version_hist": "版本/版本说明.md",
+    "runs": "迭代记录"
   },
   "last_run": null,
   "next_action": "生成第一个可观察产物",

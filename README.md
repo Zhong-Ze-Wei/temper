@@ -44,8 +44,10 @@
 
 ---
 
-## 边界（试验田纪律）
+## 发布与同步
 
-本地仓库不主动同步 GitHub / CSkills 注册表；发布是外发动作，必须用户点头。安装位置 `~/.agents/skills/temper` 已于 2026-08-27 经用户授权同步为 v0.1.0（注意：其 `.cskills-meta.json` 仍是 0.0.2 旧哈希，`cskills sync` 可能回退——以仓库为权威）。
+GitHub：https://github.com/Zhong-Ze-Wei/temper ｜ 方法与记录：[发布与同步.md](发布与同步.md) ｜ 快速执行：`./scripts/同步.sh <目标...>`
 
-两个 temper 别搞混：根 `SKILL.md` + `版本/` 是权威副本（能改）；`~/.agents/skills/temper` 是部署副本（别改，会被 cskills 覆盖）。
+规矩：**同步/发布前必须问用户**。四目标 = `agents`（~/.agents/skills）→ `claude`（~/.claude/skills）→ `github` → `cskills` 注册表；每次同步登记版本号 + commit。已知坑：安装位置的 `.cskills-meta.json` 是注册表旧哈希，`cskills sync` 可能回退——以仓库为权威。
+
+两个 temper 别搞混：根 `SKILL.md` + `版本/` 是权威副本（能改）；各安装位置是部署副本（别手改，会被覆盖）。

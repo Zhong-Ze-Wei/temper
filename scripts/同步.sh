@@ -27,8 +27,20 @@ for target in "$@"; do
   case "$target" in
     agents)  copy_skill "$HOME/.agents/skills/temper"; SYNCED+=(agents) ;;
     claude)  copy_skill "$HOME/.claude/skills/temper"; SYNCED+=(claude) ;;
-    github)  git push origin main && git push origin --tags; SYNCED+=(github) ;;
-    cskills) cskills publish . && cskills sync; SYNCED+=(cskills) ;;
+    github)
+      git push origin main
+      git push origin --tags
+      SYNCED+=(github) ;;
+    cskills)
+      # 注册表只要最小 skill 包（SKILL.md + agents/），不带仓库其余文件；publish 有交互确认，用 yes 管道
+      STAGE="$(mktemp -d)"
+      mkdir -p "$STAGE/agents"
+      cp SKILL.md "$STAGE/SKILL.md"
+      cp agents/openai.yaml "$STAGE/agents/openai.yaml"
+      yes | cskills publish "$STAGE"
+      rm -rf "$STAGE"
+      cskills sync
+      SYNCED+=(cskills) ;;
     *) echo "未知目标：$target（可选 agents/claude/github/cskills）"; exit 1 ;;
   esac
 done

@@ -1,0 +1,24 @@
+评测/评审-迭代复盘.md
+  c1f322e77ee1ae44 1-80
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "547be87838c6a05dd28c0d2620ed794f53460cf3",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 80,
+      "total_deletions": 0,
+      "accepted_lines": 3910,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/d7d64ed1fd417d079aa5beb5a7b48a0a36d4e0d0310bf4b14dc50e58c4ba0d51"
+    }
+  }
+}

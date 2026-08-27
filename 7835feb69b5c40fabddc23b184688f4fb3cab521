@@ -1,0 +1,22 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "7835feb69b5c40fabddc23b184688f4fb3cab521",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 3583,
+      "overriden_lines": 47,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/d66a780077ea83ac4e0a5639c51fceca27ef99fadda0d62de5dab74d437c2968"
+    }
+  }
+}

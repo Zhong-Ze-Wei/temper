@@ -1,48 +1,10 @@
 {
-  "schema_version": 1,
-  "stage": "optimization",
-  "local_stage": null,
-  "intensity": "standard",
-  "strategy": {
-    "change_relation": "incremental",
-    "feedback_cadence": "per_generation_observation",
-    "human_mode": "review_contested_cases"
-  },
-  "comparison_status": "working_version_stable",
-  "epoch": 1,
-  "epoch_contract": {
-    "goal": "SKILL.md 用户体验层对齐设计愿景（用户面交互契约），且让用户看得懂当前在改什么",
-    "ruler": "迭代记录/0002-候选E1用户体验层重构/愿景基线对照.md (v0)",
-    "status": "已达成并采纳（v0.0.3）"
-  },
-  "mode": "持续逼近",
-  "versions": {
-    "working": "SKILL.md (v0.0.8)",
-    "candidate": null,
-    "last_business_validated": null,
-    "production": null,
-    "active_experiments": []
-  },
-  "current_step": "持续逼近-0.0.8",
-  "paths": {
-    "working_skill": "SKILL.md",
-    "version_hist": "版本/版本说明.md",
-    "version_snapshot_v007": "版本/v0.0.7",
-    "version_snapshot_v008": "版本/v0.0.8",
-    "eval": "评测/评测说明.md",
-    "runs": "迭代记录",
-    "report": "迭代记录/汇报.md",
-    "vision_docs": "设计资料",
-    "vision_html": "temper-淬炼-开始使用.html",
-    "canonical_skill": "/Users/zhong/.agents/skills/temper"
-  },
-  "last_run": "迭代记录/0014-静态文件更新",
-  "next_action": "下一波：用一次真实'新评测标准'触发验证静态文件更新完整链路（触发→问用户→确认）",
-  "human_attention": [
-    "模式：持续逼近（自主多轮+攒代汇报）",
-    "待决：是否修三处自身不一致（README 版本滞后/快照不可变/验证代不升版本号）",
-    "待决：是否采纳走查发现的边界点（用户已授权迭代时首轮多久进入实际修改）",
-    "待验：静态文件更新链路（需要一次真实触发来测）",
-    "边界：只动仓库内，不碰安装位置与注册表，不发布"
+  "schema": 2,
+  "version": "0.1.0",
+  "next_action": "在真实任务上验证 0.1.0：至少跑通 C（散乱目录归位）或 D（一轮可比迭代），记录第一条真实使用证据",
+  "last_run": "迭代记录/0015-方向级重做0.1.0",
+  "pending": [
+    "部署：同步 0.1.0 到 ~/.agents/skills/temper（等用户点头）",
+    "评测体系按 0.1.0 口径重写（测试任务集第三、五节重复待清理；尺子变更需用户确认）"
   ]
 }

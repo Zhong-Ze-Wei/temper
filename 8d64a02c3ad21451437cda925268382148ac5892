@@ -1,0 +1,40 @@
+迭代记录/汇报.md
+  c1f322e77ee1ae44 3,5-17,19-26,30-38,40
+版本/v0.0.6/references/generation-traceability.md
+  c1f322e77ee1ae44 1-154
+版本/v0.0.6/references/interaction-contract.md
+  c1f322e77ee1ae44 1-72
+版本/v0.0.6/references/project-structure.md
+  c1f322e77ee1ae44 1-129
+版本/v0.0.6/references/assessment.md
+  c1f322e77ee1ae44 1-139
+版本/v0.0.6/openai.yaml
+  c1f322e77ee1ae44 1-4
+版本/版本说明.md
+  c1f322e77ee1ae44 19-20,45-68
+.temper/state.json
+  c1f322e77ee1ae44 20,26,31,39-40,42-44
+版本/v0.0.6/references/strategy-selection.md
+  c1f322e77ee1ae44 1-110
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.6",
+  "base_commit_sha": "8d64a02c3ad21451437cda925268382148ac5892",
+  "prompts": {
+    "c1f322e77ee1ae44": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "9dc9ee5d-d107-4bb8-853d-70fd509ceee4",
+        "model": "deepseek-v4-flash"
+      },
+      "human_author": "Zhong-Ze-Wei <zhongzewei@cvte.com>",
+      "messages": [],
+      "total_additions": 800,
+      "total_deletions": 17,
+      "accepted_lines": 4504,
+      "overriden_lines": 0,
+      "messages_url": "https://gitai.gz.cvte.cn/cas/990a47cbef779d4d34c80d99583199162acfd391ff96d8471b6e2b229befdaaf"
+    }
+  }
+}
